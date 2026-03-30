@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winehouse Hotel &amp; Fine Dining</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      background: #f7f1e8;
+      color: #2e2a24;
+      font-family: "Manrope", sans-serif;
+    }
+    .font-display {
+      font-family: "Cormorant Garamond", serif;
+    }
+    .hero-overlay {
+      background:
+        linear-gradient(to bottom, rgba(23, 29, 23, 0.2), rgba(23, 29, 23, 0.6)),
+        linear-gradient(to right, rgba(71, 17, 33, 0.40), rgba(0, 0, 0, 0.08));
+    }
+    .paper-grain {
+      background-image:
+        radial-gradient(rgba(255,255,255,0.18) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+    .section-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    
+    .section-reveal.animate-in {
+      animation: revealUp 0.9s ease forwards;
+    }
+    
+    .section-reveal-delay-1 { animation-delay: 0.08s; }
+    .section-reveal-delay-2 { animation-delay: 0.16s; }
+    .section-reveal-delay-3 { animation-delay: 0.24s; }
+    .section-reveal-delay-4 { animation-delay: 0.32s; }
+    .section-reveal-delay-5 { animation-delay: 0.40s; }
+    .section-reveal-delay-6 { animation-delay: 0.48s; }
+
+    @keyframes revealUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-scale {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .fade-in-scale.animate-in {
+      animation: fadeInScale 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    .slide-in-left.animate-in {
+      animation: slideInLeft 0.8s ease forwards;
+    }
+
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    .slide-in-right.animate-in {
+      animation: slideInRight 0.8s ease forwards;
+    }
+
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .gold-line {
+      position: relative;
+    }
+    .gold-line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 72px;
+      height: 1px;
+      background: linear-gradient(90deg, #b6924f, rgba(182,146,79,0.15));
+    }
+
+    .image-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .soft-shadow {
+      box-shadow: 0 18px 60px rgba(52, 33, 25, 0.08);
+    }
+
+    .nav-blur {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .btn-press:active {
+      transform: translateY(1px);
+    }
+
+    .map-grid {
+      background-image:
+        linear-gradient(rgba(87, 78, 59, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(87, 78, 59, 0.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="h-full w-full overflow-auto">
+   <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+     <div class="mt-4 rounded-full border border-white/20 bg-[#243126]/45 nav-blur text-white">
+      <div class="flex items-center justify-between px-5 py-3 sm:px-7">
+       <a href="#top" class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded-full">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border border-[#c8a96b]/70 text-[#e4c68f]">
+         <i data-lucide="grape" class="w-5 h-5"></i>
+        </div>
+        <div>
+         <div class="font-display text-2xl leading-none tracking-wide">
+          Hotel Haubt
+         </div>
+         <div class="text-[10px] uppercase tracking-[0.32em] text-white/70">
+          Hotel &amp; Restaurant
+         </div>
+        </div></a>
+       <nav class="hidden md:flex items-center gap-8 text-sm tracking-[0.18em] uppercase text-white/80">
+        <a href="#restaurant" class="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded">Restaurant</a> <a href="#wine" class="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded">Wine</a> <a href="#hotel" class="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded">Hotel</a> <a href="#experiences" class="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded">Experiences</a> <a href="#gallery" class="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded">Gallery</a> <a href="#contact" class="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded">Contact</a>
+       </nav><button id="menuButton" type="button" class="md:hidden inline-flex items-center justify-center rounded-lg border border-white/20 p-2 text-white hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b]" aria-label="Open menu" aria-expanded="false"> <i data-lucide="menu" class="w-5 h-5"></i> </button>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40">
+       <div class="fixed inset-0 bg-black/40" id="mobileMenuBackdrop"></div>
+       <div class="fixed top-20 left-4 right-4 rounded-3xl border border-[#c8a96b]/40 bg-[#1a2119] shadow-2xl overflow-hidden">
+        <div class="px-6 py-8 flex flex-col gap-1">
+         <a href="#restaurant" class="px-5 py-4 rounded-2xl text-base font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#c8a96b]/20 transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded-xl">Restaurant</a> <a href="#wine" class="px-5 py-4 rounded-2xl text-base font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#c8a96b]/20 transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded-xl">Wine</a> <a href="#hotel" class="px-5 py-4 rounded-2xl text-base font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#c8a96b]/20 transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded-xl">Hotel</a> <a href="#experiences" class="px-5 py-4 rounded-2xl text-base font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#c8a96b]/20 transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded-xl">Experiences</a> <a href="#gallery" class="px-5 py-4 rounded-2xl text-base font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#c8a96b]/20 transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded-xl">Gallery</a> <a href="#contact" class="px-5 py-4 rounded-2xl text-base font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#c8a96b]/20 transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b] rounded-xl">Contact</a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <main id="top">
+    <section class="relative h-full min-h-[760px] w-full overflow-hidden">
+     <img src="cast.jpg" alt="Elegant vineyard setting with wine glasses and a refined terrace atmosphere" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#2f1b24,#243126 55%,#bfa06c)';" class="absolute inset-0 h-full w-full object-cover">
+     <div class="absolute inset-0 hero-overlay"></div>
+     <div class="absolute inset-0 paper-grain opacity-20"></div>
+     <div class="relative mx-auto flex h-full max-w-7xl items-end px-4 pb-16 pt-32 sm:px-6 lg:px-8 lg:pb-24">
+      <div class="max-w-3xl text-white section-reveal">
+       <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d5b57b]/30 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-[#f0ddba]"><span class="inline-block h-1.5 w-1.5 rounded-full bg-[#d5b57b]"></span> Luxury Dining · Wine Escape · Vineyard Retreat</p>
+       <h1 id="heroTitle" class="font-display text-5xl leading-[0.94] sm:text-6xl lg:text-8xl">Fine Dining &amp; Boutique Wine Hotel in the Heart of the Vineyards</h1>
+       <p id="heroSubtitle" class="mt-6 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">A serene destination where chef-led cuisine, regional wines and five intimate vineyard-view rooms come together in one elegant village retreat.</p>
+       <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+        <button id="reserveBtn" type="button" class="btn-press inline-flex items-center justify-center gap-3 rounded-full bg-[#7b1733] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#fffaf1] transition hover:bg-[#651128] focus:outline-none focus:ring-2 focus:ring-[#d5b57b]"> <i data-lucide="utensils-crossed" class="w-4 h-4"></i> <span>Reserve a Table</span> </button> <button id="bookBtn" type="button" class="btn-press inline-flex items-center justify-center gap-3 rounded-full border border-white/30 bg-white/10 px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-[#d5b57b]"> <i data-lucide="bed-double" class="w-4 h-4"></i> <span>Book a Room</span> </button>
+       </div>
+       <div id="heroMessage" class="mt-6 hidden rounded-2xl border border-[#d5b57b]/30 bg-[#f6ecdc]/95 px-5 py-4 text-sm text-[#3d3027] soft-shadow max-w-xl"></div>
+       <div id="bookingModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50 overflow-y-auto">
+        <div class="bg-white rounded-[32px] max-w-2xl w-full shadow-2xl flex flex-col max-h-[90vh]">
+         <div class="flex items-center justify-between border-b border-[#e1d4c3] bg-white px-8 py-6 rounded-t-[32px] flex-shrink-0">
+          <h2 id="bookingTitle" class="font-display text-3xl text-[#2f261f]">Reserve a Table</h2><button id="closeBookingBtn" type="button" class="rounded-lg p-2 text-[#5c5044] hover:bg-[#f0e8d8] transition focus:outline-none focus:ring-2 focus:ring-[#c8a96b]"> <i data-lucide="x" class="w-6 h-6"></i> </button>
+         </div>
+         <form id="bookingForm" class="p-8 space-y-6 overflow-y-auto flex-1">
+          <div class="grid gap-6 sm:grid-cols-2">
+           <div><label for="bookingName" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Full Name</label> <input id="bookingName" type="text" placeholder="Your name" required class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] placeholder-[#998876] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition">
+           </div>
+           <div><label for="bookingEmail" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Email</label> <input id="bookingEmail" type="email" placeholder="your@email.com" required class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] placeholder-[#998876] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition">
+           </div>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2">
+           <div><label for="bookingPhone" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Phone</label> <input id="bookingPhone" type="tel" placeholder="+49 (0) 123 456" required class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] placeholder-[#998876] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition">
+           </div>
+           <div><label for="bookingDate" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Date</label> <input id="bookingDate" type="date" required class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition">
+           </div>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2">
+           <div><label for="bookingTime" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Time</label> <input id="bookingTime" type="time" required class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition">
+           </div>
+           <div><label for="bookingGuests" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Number of Guests</label> <select id="bookingGuests" required class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition"> <option value="">Select guests</option> <option value="1">1 Guest</option> <option value="2">2 Guests</option> <option value="3">3 Guests</option> <option value="4">4 Guests</option> <option value="5">5 Guests</option> <option value="6">6 Guests</option> <option value="7">7 Guests</option> <option value="8">8+ Guests</option> </select>
+           </div>
+          </div>
+          <div><label for="bookingType" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Experience Type</label> <select id="bookingType" required class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition"> <option value="">Select type</option> <option value="table">Restaurant - Lunch Menu</option> <option value="dinner">Restaurant - Dinner Menu</option> <option value="wine">Wine Pairing Experience</option> <option value="room">Hotel Room Booking</option> </select>
+          </div>
+          <div><label for="bookingNotes" class="block text-sm font-semibold uppercase tracking-[0.12em] text-[#5c5044] mb-3">Special Requests</label> <textarea id="bookingNotes" placeholder="Dietary preferences, occasion, etc." rows="4" class="w-full px-5 py-3 rounded-lg border border-[#dfd1bf] bg-white text-[#2f261f] placeholder-[#998876] focus:outline-none focus:ring-2 focus:ring-[#c8a96b] transition resize-none"></textarea>
+          </div>
+          <div id="bookingMessage" class="hidden rounded-2xl border border-[#d5b57b]/30 bg-[#f6ecdc]/95 px-5 py-4 text-sm text-[#3d3027]"></div>
+          <div class="flex gap-4 sm:flex-row"><button id="submitBookingBtn" type="submit" class="btn-press flex-1 inline-flex items-center justify-center gap-3 rounded-full bg-[#7b1733] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#fffaf1] transition hover:bg-[#651128] focus:outline-none focus:ring-2 focus:ring-[#d5b57b]"> <i data-lucide="check-circle" class="w-4 h-4"></i> <span>Confirm Booking</span> </button> <button id="cancelBookingBtn" type="button" class="btn-press flex-1 inline-flex items-center justify-center gap-3 rounded-full border border-[#dfd1bf] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#5c5044] transition hover:bg-[#f0e8d8] focus:outline-none focus:ring-2 focus:ring-[#d5b57b]"> <i data-lucide="x" class="w-4 h-4"></i> <span>Cancel</span> </button>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-[#f7f1e8]">
+     <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="grid gap-6 md:grid-cols-3">
+       <div class="section-reveal section-reveal-delay-1 rounded-[28px] border border-[#d8c8b2] bg-[#fbf7f0] p-8 soft-shadow md:fade-in-scale">
+        <p class="text-[11px] uppercase tracking-[0.28em] text-[#8a6c46]">Restaurant First</p>
+        <h2 class="mt-3 font-display text-4xl text-[#2f261f]">A destination for fine dining.</h2>
+        <p class="mt-4 text-sm leading-7 text-[#5c5044]">The restaurant leads the experience with chef-driven tasting menus, seasonal ingredients and refined service.</p>
+       </div>
+       <div class="section-reveal section-reveal-delay-2 rounded-[28px] border border-[#d8c8b2] bg-[#243126] p-8 text-[#f9f3e8] soft-shadow md:fade-in-scale">
+        <p class="text-[11px] uppercase tracking-[0.28em] text-[#dcbc85]">Wine Culture</p>
+        <h2 class="mt-3 font-display text-4xl">Cellar, terroir, ritual.</h2>
+        <p class="mt-4 text-sm leading-7 text-[#d8d0c2]">Discover elegant tastings, vineyard stories and regional bottles selected to elevate every course.</p>
+       </div>
+       <div class="section-reveal section-reveal-delay-3 rounded-[28px] border border-[#d8c8b2] bg-[#efe2cf] p-8 soft-shadow md:fade-in-scale">
+        <p class="text-[11px] uppercase tracking-[0.28em] text-[#8a6c46]">Boutique Stay</p>
+        <h2 class="mt-3 font-display text-4xl text-[#2f261f]">Five rooms of quiet luxury.</h2>
+        <p class="mt-4 text-sm leading-7 text-[#5c5044]">An intimate hideaway for couples and wine lovers seeking calm interiors and vineyard views.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="restaurant" class="bg-[#fcf8f2]">
+     <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+       <div class="section-reveal">
+        <p class="text-[11px] uppercase tracking-[0.32em] text-[#8a6c46]">Restaurant</p>
+        <h2 id="restaurantTitle" class="gold-line mt-3 font-display text-5xl text-[#2b201c] sm:text-6xl">Seasonal cuisine, plated with precision.</h2>
+        <p id="restaurantText" class="mt-8 max-w-2xl text-base leading-8 text-[#5b4b3d]">Our fine dining restaurant is the heart of the property — an intimate, chef-led experience inspired by the rhythm of the vineyard and the richness of the region. Expect elegant plating, thoughtful technique and a menu that changes with the season.</p>
+        <div class="mt-10 grid gap-5 sm:grid-cols-3">
+         <div class="rounded-[24px] border border-[#e1d4c3] bg-white p-6 soft-shadow">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-[#8a6c46]">Lunch Menu</p>
+          <h3 class="mt-3 font-display text-3xl text-[#2f261f]">Light &amp; refined</h3>
+          <p class="mt-3 text-sm leading-7 text-[#655548]">A polished midday menu with fresh regional produce, garden herbs and elegant presentation.</p>
+         </div>
+         <div class="rounded-[24px] border border-[#e1d4c3] bg-[#7b1733] p-6 text-white soft-shadow">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-[#f1dcb0]">Dinner Menu</p>
+          <h3 class="mt-3 font-display text-3xl">Signature tasting</h3>
+          <p class="mt-3 text-sm leading-7 text-white/85">An elevated evening experience with multi-course storytelling and Michelin-style finesse.</p>
+         </div>
+         <div class="rounded-[24px] border border-[#e1d4c3] bg-[#243126] p-6 text-white soft-shadow">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-[#f1dcb0]">Wine Pairing</p>
+          <h3 class="mt-3 font-display text-3xl">Cellar-guided</h3>
+          <p class="mt-3 text-sm leading-7 text-white/85">Pair each course with regional wines chosen to deepen aroma, texture and sense of place.</p>
+         </div>
+        </div>
+       </div>
+       <div class="section-reveal section-reveal-delay-2">
+        <div class="grid gap-5">
+         <div class="image-card overflow-hidden rounded-[30px] soft-shadow">
+          <img src="./1000038557.jpg" alt="Elegant fine dining table setting on a terrace" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#d9c2ab'; this.parentElement.style.minHeight='320px';" class="h-[420px] w-full object-cover transition duration-700">
+         </div>
+         <div class="grid gap-5 sm:grid-cols-2">
+          <div class="image-card overflow-hidden rounded-[26px] soft-shadow h-full">
+           <img src="./1000038006.jpg" alt="Chef plated gourmet dish" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#e7d8c6'; this.parentElement.style.minHeight='220px';" class="h-full w-full object-cover transition duration-700">
+          </div>
+          <div class="rounded-[26px] border border-[#e1d4c3] bg-[#f2e7d8] p-7 soft-shadow flex flex-col justify-center">
+           <p class="text-[11px] uppercase tracking-[0.28em] text-[#8a6c46]">Chef's Philosophy</p>
+           <p class="mt-4 font-display text-3xl text-[#2f261f]">“Quiet luxury on the plate.”</p>
+           <p class="mt-4 text-sm leading-7 text-[#655548]">Every dish is designed to feel calm, precise and deeply connected to the surrounding wine landscape.</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="wine" class="bg-[#243126] text-[#f8f2e8]">
+     <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+       <div class="section-reveal">
+        <p class="text-[11px] uppercase tracking-[0.32em] text-[#dcbc85]">Wine Experience</p>
+        <h2 class="gold-line mt-3 font-display text-5xl text-[#f9f2e7] sm:text-6xl">A stay shaped by the culture of wine.</h2>
+        <p class="mt-8 max-w-xl text-base leading-8 text-[#ddd2c2]">Taste the region through guided pairings, cellar visits and intimate introductions to local wine traditions. Every detail invites guests deeper into the character of the vineyards.</p>
+        <div class="mt-10 space-y-5">
+         <div class="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start gap-4">
+           <div class="mt-1 rounded-full border border-[#dcbc85]/60 p-3 text-[#e8c88f]"><i data-lucide="wine" class="w-5 h-5"></i>
+           </div>
+           <div>
+            <h3 class="font-display text-3xl">Wine Tastings</h3>
+            <p class="mt-2 text-sm leading-7 text-[#d9cfbf]">Curated tastings featuring local vintages, elegant glassware and stories of the terroir.</p>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start gap-4">
+           <div class="mt-1 rounded-full border border-[#dcbc85]/60 p-3 text-[#e8c88f]"><i data-lucide="warehouse" class="w-5 h-5"></i>
+           </div>
+           <div>
+            <h3 class="font-display text-3xl">Cellar Tours</h3>
+            <p class="mt-2 text-sm leading-7 text-[#d9cfbf]">Step below the house to explore bottles, barrels and the craftsmanship behind each pairing.</p>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start gap-4">
+           <div class="mt-1 rounded-full border border-[#dcbc85]/60 p-3 text-[#e8c88f]"><i data-lucide="map" class="w-5 h-5"></i>
+           </div>
+           <div>
+            <h3 class="font-display text-3xl">Regional Wine Culture</h3>
+            <p class="mt-2 text-sm leading-7 text-[#d9cfbf]">Experience the charm of a famous German wine region through local routes, estates and village traditions.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="section-reveal section-reveal-delay-2">
+        <div class="grid gap-5 sm:grid-cols-2">
+         <div class="image-card overflow-hidden rounded-[30px] soft-shadow sm:col-span-2">
+          <img src="./1000038584.jpg" alt="Rolling vineyards in a premium wine region" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#6a7a63'; this.parentElement.style.minHeight='280px';" class="h-[300px] w-full object-cover transition duration-700">
+         </div>
+         <div class="image-card overflow-hidden rounded-[26px] soft-shadow">
+          <img src="./1000038589.jpg" alt="Red wine being served into elegant glasses" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#925c67'; this.parentElement.style.minHeight='240px';" class="h-[240px] w-full object-cover transition duration-700">
+         </div>
+         <div class="image-card overflow-hidden rounded-[26px] soft-shadow">
+          <img src="./1000038598.jpg" alt="Wine bottles in a refined cellar display" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#8b7b65'; this.parentElement.style.minHeight='240px';" class="h-[240px] w-full object-cover transition duration-700">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="hotel" class="bg-[#f7f1e8]">
+     <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+       <div class="section-reveal">
+        <div class="image-card overflow-hidden rounded-[34px] soft-shadow">
+         <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Elegant boutique hotel room with warm luxurious interior" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#d8c4ae'; this.parentElement.style.minHeight='420px';" class="h-[520px] w-full object-cover transition duration-700">
+        </div>
+       </div>
+       <div class="section-reveal section-reveal-delay-2">
+        <p class="text-[11px] uppercase tracking-[0.32em] text-[#8a6c46]">Boutique Hotel</p>
+        <h2 id="hotelTitle" class="gold-line mt-3 font-display text-5xl text-[#2b201c] sm:text-6xl">Only five rooms, designed for deep calm.</h2>
+        <p id="hotelText" class="mt-8 max-w-xl text-base leading-8 text-[#5b4b3d]">The hotel is intimate by design, with just five spacious luxury rooms overlooking the vineyards. Natural textures, soft light and quiet elegance create a restful retreat after an evening of fine dining and wine.</p>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2">
+         <div class="rounded-[24px] border border-[#dfd1bf] bg-white p-6 soft-shadow">
+          <h3 class="font-display text-3xl text-[#2f261f]">Vineyard Views</h3>
+          <p class="mt-3 text-sm leading-7 text-[#655548]">Wake to rows of vines, morning mist and the peaceful rhythm of the countryside.</p>
+         </div>
+         <div class="rounded-[24px] border border-[#dfd1bf] bg-[#efe2cf] p-6 soft-shadow">
+          <h3 class="font-display text-3xl text-[#2f261f]">Elegant Interiors</h3>
+          <p class="mt-3 text-sm leading-7 text-[#655548]">Warm woods, soft textiles and understated luxury define each room and suite.</p>
+         </div>
+        </div>
+        <div class="mt-8 rounded-[26px] border border-[#dbcbb8] bg-[#fbf7f0] p-7 soft-shadow">
+         <div class="grid gap-6 sm:grid-cols-3">
+          <div>
+           <p class="text-[11px] uppercase tracking-[0.24em] text-[#8a6c46]">Rooms</p>
+           <p class="mt-2 font-display text-4xl text-[#2f261f]">5</p>
+          </div>
+          <div>
+           <p class="text-[11px] uppercase tracking-[0.24em] text-[#8a6c46]">Atmosphere</p>
+           <p class="mt-2 font-display text-4xl text-[#2f261f]">Quiet</p>
+          </div>
+          <div>
+           <p class="text-[11px] uppercase tracking-[0.24em] text-[#8a6c46]">Style</p>
+           <p class="mt-2 font-display text-4xl text-[#2f261f]">Luxury</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="experiences" class="bg-[#fcf8f2]">
+     <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="section-reveal text-center max-w-3xl mx-auto">
+       <p class="text-[11px] uppercase tracking-[0.32em] text-[#8a6c46]">Experiences</p>
+       <h2 class="mt-3 font-display text-5xl text-[#2b201c] sm:text-6xl">Slow days in one of Germany’s most beautiful wine landscapes.</h2>
+       <p class="mt-6 text-base leading-8 text-[#5b4b3d]">Beyond the table and the room, the surrounding region invites exploration — on foot, by bike and through winding village wine routes.</p>
+      </div>
+      <div class="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+       <div class="section-reveal section-reveal-delay-1 rounded-[28px] border border-[#e1d4c3] bg-white p-7 soft-shadow">
+        <div class="rounded-full border border-[#c9a86d] w-fit p-3 text-[#8a6c46]"><i data-lucide="trees" class="w-5 h-5"></i>
+        </div>
+        <h3 class="mt-5 font-display text-3xl text-[#2f261f]">Vineyard Tours</h3>
+        <p class="mt-3 text-sm leading-7 text-[#655548]">Walk among the vines and learn how the landscape shapes each bottle.</p>
+       </div>
+       <div class="section-reveal section-reveal-delay-2 rounded-[28px] border border-[#e1d4c3] bg-[#efe2cf] p-7 soft-shadow">
+        <div class="rounded-full border border-[#c9a86d] w-fit p-3 text-[#8a6c46]"><i data-lucide="map-pinned" class="w-5 h-5"></i>
+        </div>
+        <h3 class="mt-5 font-display text-3xl text-[#2f261f]">Wine Routes</h3>
+        <p class="mt-3 text-sm leading-7 text-[#655548]">Follow scenic village roads through tasting spots and iconic regional views.</p>
+       </div>
+       <div class="section-reveal section-reveal-delay-3 rounded-[28px] border border-[#e1d4c3] bg-[#243126] p-7 text-white soft-shadow">
+        <div class="rounded-full border border-[#dcbc85] w-fit p-3 text-[#e8c88f]"><i data-lucide="bike" class="w-5 h-5"></i>
+        </div>
+        <h3 class="mt-5 font-display text-3xl">Cycling Trails</h3>
+        <p class="mt-3 text-sm leading-7 text-white/85">Cycle gently through vineyards, river bends and charming wine villages.</p>
+       </div>
+       <div class="section-reveal section-reveal-delay-4 rounded-[28px] border border-[#e1d4c3] bg-white p-7 soft-shadow">
+        <div class="rounded-full border border-[#c9a86d] w-fit p-3 text-[#8a6c46]"><i data-lucide="camera" class="w-5 h-5"></i>
+        </div>
+        <h3 class="mt-5 font-display text-3xl text-[#2f261f]">Regional Discovery</h3>
+        <p class="mt-3 text-sm leading-7 text-[#655548]">Discover small German village charm, culture and unforgettable vineyard panoramas.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="gallery" class="bg-[#f7f1e8]">
+     <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="section-reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+       <div class="max-w-2xl">
+        <p class="text-[11px] uppercase tracking-[0.32em] text-[#8a6c46]">Gallery</p>
+        <h2 class="mt-3 font-display text-5xl text-[#2b201c] sm:text-6xl">Moments of taste, texture and place.</h2>
+       </div>
+       <p class="max-w-xl text-sm leading-7 text-[#5b4b3d]">A visual glimpse into the restaurant, wine experiences, boutique rooms and the surrounding vineyard region.</p>
+      </div>
+      <div class="mt-14 grid grid-cols-1 gap-0 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4 w-full">
+       <div class="image-card overflow-hidden rounded-0 sm:rounded-[28px] soft-shadow lg:row-span-2">
+        <img src="./1000037985.jpg" alt="Elegant gourmet dish in fine dining style" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#d9c5b1'; this.parentElement.style.minHeight='300px';" class="h-full min-h-[260px] w-full object-cover transition duration-700">
+       </div>
+       <div class="image-card overflow-hidden rounded-0 sm:rounded-[28px] soft-shadow h-[220px] sm:h-[260px]">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Wine glasses and premium table setting" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#bea48f'; this.parentElement.style.minHeight='220px';" class="h-full w-full object-cover transition duration-700">
+       </div>
+       <div class="image-card overflow-hidden rounded-0 sm:rounded-[28px] soft-shadow h-[220px] sm:h-[260px]">
+        <img src="./1000038566.jpg" alt="Vineyard landscape in warm evening light" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#9aa18a'; this.parentElement.style.minHeight='220px';" class="h-full w-full object-cover transition duration-700">
+       </div>
+       <div class="image-card overflow-hidden rounded-0 sm:rounded-[28px] soft-shadow lg:row-span-2">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Luxury hotel bedroom interior" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#d8c4ae'; this.parentElement.style.minHeight='300px';" class="h-full min-h-[260px] w-full object-cover transition duration-700">
+       </div>
+       <div class="image-card overflow-hidden rounded-0 sm:rounded-[28px] soft-shadow lg:col-span-2">
+        <img src="./1000037988.jpg" alt="Beautiful restaurant interior with elegant ambiance" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#cab39a'; this.parentElement.style.minHeight='220px';" class="h-[260px] w-full object-cover transition duration-700">
+       </div>
+       <div class="image-card overflow-hidden rounded-0 sm:rounded-[28px] soft-shadow">
+        <img src="./1000038019.jpg" alt="Wine bottles and cellar atmosphere" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='#a78d6f'; this.parentElement.style.minHeight='220px';" class="h-[260px] w-full object-cover transition duration-700">
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="contact" class="bg-[#243126] text-[#f8f2e8]">
+     <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+       <div class="section-reveal">
+        <p class="text-[11px] uppercase tracking-[0.32em] text-[#dcbc85]">Contact</p>
+        <h2 id="contactTitle" class="mt-3 font-display text-5xl text-[#f9f2e7] sm:text-6xl">Plan your visit to the vineyards.</h2>
+        <p class="mt-6 max-w-xl text-base leading-8 text-[#ddd2c2]">For restaurant reservations, room bookings or curated wine experiences, our house team will be delighted to assist.</p>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2">
+         <div class="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <p class="text-[11px] uppercase tracking-[0.24em] text-[#dcbc85]">Address</p>
+          <p class="mt-3 text-base leading-7 text-[#f4ecdf]">Winehouse Hotel &amp; Restaurant<br>
+            Marktstraße 12<br>
+            56330 Kobern-Gondorf, Njemačka</p>
+         </div>
+         <div class="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <p class="text-[11px] uppercase tracking-[0.24em] text-[#dcbc85]">Opening Hours</p>
+          <p class="mt-3 text-base leading-7 text-[#f4ecdf]">Restaurant: Wed–Sun, 12:00–23:00<br>
+            Hotel: Daily Check-In from 15:00</p>
+         </div>
+         <div class="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <p class="text-[11px] uppercase tracking-[0.24em] text-[#dcbc85]">Reservations</p>
+          <p class="mt-3 text-base leading-7 text-[#f4ecdf]">+49 (0) 123 456 789<br>
+            reservations@winehousehotel.de</p>
+         </div>
+         <div class="rounded-[24px] border border-white/10 bg-white/5 p-6">
+          <p class="text-[11px] uppercase tracking-[0.24em] text-[#dcbc85]">Best For</p>
+          <p class="mt-3 text-base leading-7 text-[#f4ecdf]">Wine lovers, romantic weekends, gourmet travelers and slow luxury escapes.</p>
+         </div>
+        </div>
+       </div>
+       <div class="section-reveal section-reveal-delay-2">
+        <div class="rounded-[34px] border border-white/10 bg-[#f3e8d6] p-4 soft-shadow">
+         <div class="map-grid rounded-[28px] bg-[#efe0ca] p-6 text-[#3d3027]">
+          <div class="flex items-center justify-between border-b border-[#bfa98c] pb-4">
+           <div>
+            <p class="text-[11px] uppercase tracking-[0.24em] text-[#8a6c46]">Location Map</p>
+            <h3 class="mt-2 font-display text-3xl text-[#2f261f]">In the heart of the vineyards</h3>
+           </div>
+           <div class="rounded-full border border-[#b6924f] p-3 text-[#8a6c46]">
+            <i data-lucide="map-pinned" class="w-5 h-5"></i>
+           </div>
+          </div>
+          <div class="relative mt-6 h-[360px] overflow-hidden rounded-[24px] bg-[linear-gradient(135deg,#e8d8bf,#f4ebdf)]">
+           <div class="absolute left-[18%] top-[24%] h-24 w-24 rounded-full border border-[#cdb28a]/60"></div>
+           <div class="absolute right-[16%] top-[18%] h-32 w-32 rounded-full border border-[#cdb28a]/60"></div>
+           <div class="absolute left-[30%] bottom-[18%] h-28 w-28 rounded-full border border-[#cdb28a]/60"></div>
+           <div class="absolute left-[12%] top-[58%] rotate-[-12deg] text-[#af9878]">
+            Vineyard Route
+           </div>
+           <div class="absolute right-[10%] top-[54%] rotate-[10deg] text-[#af9878]">
+            Village Center
+           </div>
+           <div class="absolute left-[22%] top-[40%] right-[22%] h-1 rounded-full bg-[#c0a173]"></div>
+           <div class="absolute left-[46%] top-[32%] bottom-[18%] w-1 rounded-full bg-[#c0a173]"></div>
+           <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="flex flex-col items-center">
+             <div class="rounded-full bg-[#7b1733] p-4 text-white shadow-xl">
+              <i data-lucide="grape" class="w-7 h-7"></i>
+             </div>
+              <p class="mt-2 rounded-lg bg-white/70 px-3 py-1 text-xs text-[#6c512e]">Marktstraße 12, <br> 56330 Kobern-Gondorf</p></p>
+            </div>
+           </div>
+          </div>
+          <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+           <a id="directionsBtn" href="https://www.google.com/maps/search/Marktstra%C3%9Fe+12,+56330+Kobern-Gondorf,+Deutschland" target="_blank" rel="noopener noreferrer" class="btn-press inline-flex items-center justify-center gap-2 rounded-full bg-[#243126] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#f8f2e8] transition hover:bg-[#1d281f] focus:outline-none focus:ring-2 focus:ring-[#b6924f]"> <i data-lucide="navigation" class="w-4 h-4"></i> Get Directions </a> <button id="inquiryBtn" type="button" class="btn-press inline-flex items-center justify-center gap-2 rounded-full border border-[#b6924f] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#6c512e] transition hover:bg-[#f6eee4] focus:outline-none focus:ring-2 focus:ring-[#b6924f]"> <i data-lucide="mail" class="w-4 h-4"></i> Send Inquiry </button>
+          </div>
+          <div id="contactMessage" class="mt-4 hidden rounded-2xl border border-[#d5b57b]/50 bg-white/80 px-4 py-3 text-sm text-[#3d3027]"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="bg-[#1b241d] text-[#ddd2c2]">
+    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+       <p class="font-display text-3xl text-[#f8f2e8]">Winehouse</p>
+       <p class="text-xs uppercase tracking-[0.28em] text-[#bfa77d]">Hotel &amp; Fine Dining Restaurant</p>
+      </div>
+      <p class="text-sm text-[#cfc3b1]">A refined escape for wine lovers, couples and elegant countryside stays.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#f7f1e8",
+      surface_color: "#fcf8f2",
+      text_color: "#2e2a24",
+      primary_action_color: "#7b1733",
+      secondary_action_color: "#b6924f",
+      font_family: "Cormorant Garamond",
+      font_size: 18,
+      hero_title: "Fine Dining & Boutique Wine Hotel in the Heart of the Vineyards",
+      hero_subtitle: "A serene destination where chef-led cuisine, regional wines and five intimate vineyard-view rooms come together in one elegant village retreat.",
+      restaurant_title: "Seasonal cuisine, plated with precision.",
+      restaurant_text: "Our fine dining restaurant is the heart of the property — an intimate, chef-led experience inspired by the rhythm of the vineyard and the richness of the region. Expect elegant plating, thoughtful technique and a menu that changes with the season.",
+      hotel_title: "Only five rooms, designed for deep calm.",
+      hotel_text: "The hotel is intimate by design, with just five spacious luxury rooms overlooking the vineyards. Natural textures, soft light and quiet elegance create a restful retreat after an evening of fine dining and wine.",
+      contact_title: "Plan your visit to the vineyards."
+    };
+
+    const els = {};
+
+    function cacheElements() {
+      els.body = document.body;
+      els.app = document.getElementById("app");
+      els.heroTitle = document.getElementById("heroTitle");
+      els.heroSubtitle = document.getElementById("heroSubtitle");
+      els.restaurantTitle = document.getElementById("restaurantTitle");
+      els.restaurantText = document.getElementById("restaurantText");
+      els.hotelTitle = document.getElementById("hotelTitle");
+      els.hotelText = document.getElementById("hotelText");
+      els.contactTitle = document.getElementById("contactTitle");
+      els.reserveBtn = document.getElementById("reserveBtn");
+      els.bookBtn = document.getElementById("bookBtn");
+      els.directionsBtn = document.getElementById("directionsBtn");
+      els.inquiryBtn = document.getElementById("inquiryBtn");
+      els.heroMessage = document.getElementById("heroMessage");
+      els.contactMessage = document.getElementById("contactMessage");
+      els.menuButton = document.getElementById("menuButton");
+      els.mobileMenu = document.getElementById("mobileMenu");
+      els.bookingModal = document.getElementById("bookingModal");
+      els.bookingTitle = document.getElementById("bookingTitle");
+      els.bookingForm = document.getElementById("bookingForm");
+      els.bookingName = document.getElementById("bookingName");
+      els.bookingEmail = document.getElementById("bookingEmail");
+      els.bookingPhone = document.getElementById("bookingPhone");
+      els.bookingDate = document.getElementById("bookingDate");
+      els.bookingTime = document.getElementById("bookingTime");
+      els.bookingGuests = document.getElementById("bookingGuests");
+      els.bookingType = document.getElementById("bookingType");
+      els.bookingNotes = document.getElementById("bookingNotes");
+      els.bookingMessage = document.getElementById("bookingMessage");
+      els.submitBookingBtn = document.getElementById("submitBookingBtn");
+      els.closeBookingBtn = document.getElementById("closeBookingBtn");
+      els.cancelBookingBtn = document.getElementById("cancelBookingBtn");
+    }
+
+    function showMessage(target, text) {
+      target.textContent = text;
+      target.classList.remove("hidden");
+      clearTimeout(target._timer);
+      target._timer = setTimeout(() => {
+        target.classList.add("hidden");
+      }, 3500);
+    }
+
+    function applyConfig(config) {
+      const merged = { ...defaultConfig, ...config };
+      const baseSize = merged.font_size || defaultConfig.font_size;
+      const primaryFont = `${merged.font_family || defaultConfig.font_family}, Georgia, serif`;
+      const bodyFont = '"Manrope", ui-sans-serif, system-ui, sans-serif';
+
+      els.body.style.backgroundColor = merged.background_color;
+      els.body.style.color = merged.text_color;
+      els.app.style.backgroundColor = merged.background_color;
+
+      document.querySelectorAll('section.bg-\\[\\#fcf8f2\\]').forEach(el => {
+        el.style.backgroundColor = merged.surface_color;
+      });
+      document.querySelectorAll('section.bg-\\[\\#f7f1e8\\]').forEach(el => {
+        el.style.backgroundColor = merged.background_color;
+      });
+
+      els.heroTitle.textContent = merged.hero_title;
+      els.heroSubtitle.textContent = merged.hero_subtitle;
+      els.restaurantTitle.textContent = merged.restaurant_title;
+      els.restaurantText.textContent = merged.restaurant_text;
+      els.hotelTitle.textContent = merged.hotel_title;
+      els.hotelText.textContent = merged.hotel_text;
+      els.contactTitle.textContent = merged.contact_title;
+
+      [els.heroTitle, els.restaurantTitle, els.hotelTitle, els.contactTitle].forEach(el => {
+        el.style.fontFamily = primaryFont;
+        el.style.fontSize = `${baseSize * 3.2}px`;
+      });
+
+      document.querySelectorAll(".font-display").forEach(el => {
+        el.style.fontFamily = primaryFont;
+      });
+
+      document.querySelectorAll("p, a, button, span, h3").forEach(el => {
+        if (!el.classList.contains("font-display")) {
+          el.style.fontFamily = bodyFont;
+        }
+      });
+
+      document.querySelectorAll("p").forEach(el => {
+        el.style.fontSize = `${baseSize}px`;
+      });
+
+      document.querySelectorAll(".text-xs").forEach(el => {
+        el.style.fontSize = `${baseSize * 0.72}px`;
+      });
+
+      document.querySelectorAll(".text-sm").forEach(el => {
+        el.style.fontSize = `${baseSize * 0.82}px`;
+      });
+
+      document.querySelectorAll("h3.font-display").forEach(el => {
+        el.style.fontSize = `${baseSize * 1.7}px`;
+      });
+
+      els.reserveBtn.style.backgroundColor = merged.primary_action_color;
+      els.reserveBtn.style.color = "#fffaf1";
+
+      [els.bookBtn, els.directionsBtn].forEach(el => {
+        el.style.backgroundColor = merged.text_color;
+      });
+
+      [els.inquiryBtn].forEach(el => {
+        el.style.borderColor = merged.secondary_action_color;
+        el.style.color = merged.secondary_action_color;
+      });
+
+      document.querySelectorAll(".text-\\[\\#8a6c46\\], .text-\\[\\#dcbc85\\], .text-\\[\\#bfa77d\\], .text-\\[\\#e8c88f\\]").forEach(el => {
+        el.style.color = merged.secondary_action_color;
+      });
+
+      document.querySelectorAll(".border-\\[\\#b6924f\\], .border-\\[\\#c9a86d\\], .border-\\[\\#dcbc85\\]").forEach(el => {
+        el.style.borderColor = merged.secondary_action_color;
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          applyConfig(config);
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+          ["restaurant_title", config.restaurant_title || defaultConfig.restaurant_title],
+          ["restaurant_text", config.restaurant_text || defaultConfig.restaurant_text],
+          ["hotel_title", config.hotel_title || defaultConfig.hotel_title],
+          ["hotel_text", config.hotel_text || defaultConfig.hotel_text],
+          ["contact_title", config.contact_title || defaultConfig.contact_title]
+        ])
+      });
+    }
+
+    cacheElements();
+    applyConfig((window.elementSdk && window.elementSdk.config) || defaultConfig);
+
+    function openBookingModal(type) {
+      if (type === "table") {
+        els.bookingTitle.textContent = "Reserve a Table";
+        els.bookingType.value = "table";
+      } else if (type === "room") {
+        els.bookingTitle.textContent = "Book a Room";
+        els.bookingType.value = "room";
+      }
+      els.bookingForm.reset();
+      els.bookingMessage.classList.add("hidden");
+      els.bookingModal.classList.remove("hidden");
+    }
+
+    function closeBookingModal() {
+      els.bookingModal.classList.add("hidden");
+    }
+
+    els.menuButton.addEventListener("click", () => {
+      const isHidden = els.mobileMenu.classList.contains("hidden");
+      els.mobileMenu.classList.toggle("hidden");
+      els.menuButton.setAttribute("aria-expanded", String(isHidden));
+    });
+
+    const backdrop = document.getElementById("mobileMenuBackdrop");
+    if (backdrop) {
+      backdrop.addEventListener("click", () => {
+        els.mobileMenu.classList.add("hidden");
+        els.menuButton.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          els.mobileMenu.classList.add("hidden");
+          els.menuButton.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+
+    els.reserveBtn.addEventListener("click", () => {
+      openBookingModal("table");
+    });
+
+    els.bookBtn.addEventListener("click", () => {
+      openBookingModal("room");
+    });
+
+    els.directionsBtn.addEventListener("click", () => {
+      showMessage(els.contactMessage, "Directions would typically open your preferred map link in a new tab. This preview keeps everything safely inside the page.");
+    });
+
+    els.inquiryBtn.addEventListener("click", () => {
+      showMessage(els.contactMessage, "Inquiry details can be added here for reservations, private dining or boutique hotel stays.");
+    });
+
+    els.closeBookingBtn.addEventListener("click", closeBookingModal);
+    els.cancelBookingBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeBookingModal();
+    });
+    els.bookingModal.addEventListener("click", (e) => {
+      if (e.target === els.bookingModal) {
+        closeBookingModal();
+      }
+    });
+
+    els.bookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const bookingData = {
+        name: els.bookingName.value,
+        email: els.bookingEmail.value,
+        phone: els.bookingPhone.value,
+        date: els.bookingDate.value,
+        time: els.bookingTime.value,
+        guests: els.bookingGuests.value,
+        type: els.bookingType.value,
+        notes: els.bookingNotes.value
+      };
+
+      els.submitBookingBtn.disabled = true;
+      els.bookingMessage.textContent = "Processing your booking...";
+      els.bookingMessage.classList.remove("hidden");
+
+      setTimeout(() => {
+        els.submitBookingBtn.disabled = false;
+        const typeLabel = els.bookingType.options[els.bookingType.selectedIndex].text;
+        els.bookingMessage.textContent = `✓ Booking confirmed! We've received your ${typeLabel} request for ${bookingData.guests} guest(s) on ${bookingData.date}. A confirmation email will be sent to ${bookingData.email} shortly.`;
+        els.bookingMessage.classList.remove("hidden");
+
+        setTimeout(() => {
+          closeBookingModal();
+          els.bookingForm.reset();
+        }, 2500);
+      }, 1200);
+    });
+
+    lucide.createIcons();
+
+    // Scroll animation observer for mobile and desktop
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll(".section-reveal, .fade-in-scale, .slide-in-left, .slide-in-right, .image-card").forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e47726f4285ec28',t:'MTc3NDg3NzE5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
